@@ -54,7 +54,8 @@ async function busca() {
       forma.nombre.value = data.nombre ;
       forma.télefono.value=data.télefono;
       forma.grupo.value=data.grupo;
-      forma.fecha.value=data.fecha || "" ;
+      forma.fecha.value=
+        data.fecha || "" ;
       forma.addEventListener(
         "submit", guarda);
       forma.eliminar.
