@@ -50,9 +50,11 @@ async function busca() {
           import("./tipos.js").
                   Alumno} */
       const data = doc.data();
-      forma.matricula.value = data.matricula;
-      forma.nombre.value =
-        data.nombre  || "" ;
+     forma.matricula.value = data.matricula|| "" ;
+      forma.nombre.value = data.nombre || "" ;
+      forma.télefono.value=data.télefono || "" ;
+      forma.grupo.value=data.grupo || "" ;
+      forma.fecha.value=data.fecha || "" ;
       forma.addEventListener(
         "submit", guarda);
       forma.eliminar.
