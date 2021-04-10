@@ -66,7 +66,6 @@ function htmlFila(doc) {
    * @type {import("./tipos.js").
                   Alumno} */
   const data = doc.data();
-  const matricula = cod(data.matricula);
   const nombre = cod(data.nombre);
   const matricula = cod(data.matricula);
   const télefono = cod(data.télefono);
