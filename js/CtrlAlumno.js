@@ -51,11 +51,8 @@ async function busca() {
                   Alumno} */
       const data = doc.data();
       forma.matricula.value = data.matricula;
-      forma.nombre.value = data.nombre ;
-      forma.télefono.value=data.télefono;
-      forma.grupo.value=data.grupo;
-      forma.fecha.value=
-        data.fecha || "" ;
+      forma.nombre.value =
+        data.nombre  || "" ;
       forma.addEventListener(
         "submit", guarda);
       forma.eliminar.
