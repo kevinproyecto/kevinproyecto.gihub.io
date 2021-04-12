@@ -50,11 +50,11 @@ async function busca() {
           import("./tipos.js").
                   Alumno} */
       const data = doc.data();
-     forma.matricula.value = data.matricula|| "" ;
-      forma.nombre.value = data.nombre || "" ;
-      forma.télefono.value=data.télefono || "" ;
-      forma.grupo.value=data.grupo || "" ;
-      forma.fecha.value=data.fecha || "" ;
+      forma.matricula.value = data.matricula;
+      forma.nombre.value = data.nombre || "";
+      forma.telefono.value = data.telefono || "";
+      forma.grupo.value = data.grupo || "";
+      forma.fecha.value = data.fecha || "";
       forma.addEventListener(
         "submit", guarda);
       forma.eliminar.
@@ -74,25 +74,24 @@ async function busca() {
 async function guarda(evt) {
   try {
     evt.preventDefault();
+    const formData =
+      new FormData(forma);
     const matricula = getString(
-      formData, "matricula").trim();  
-  const nombre = getString(
-    formData, "nombre").trim();
-   
-    const télefono = getString(
-      formData, "télefono").trim();
-
-      const grupo = getString(
-        formData, "grupo").trim();
-        const fecha = getString(
-          formData, "fecha").trim();
+        formData, "matricula").trim();  
+    const nombre = getString(formData, "nombre").trim();
+    const telefono = getString(formData, "telefono").trim();
+    const grupo = getString(formData, "grupo").trim();
+    const fecha = getString(formData, "fecha").trim();
     /**
      * @type {
         import("./tipos.js").
                 Alumno} */
     const modelo = {
       matricula, 
-      nombre
+      nombre,
+      telefono,
+      grupo,
+      fecha
     };
     await daoAlumno.
       doc(id).
@@ -116,3 +115,4 @@ async function elimina() {
     muestraError(e);
   }
 }
+
